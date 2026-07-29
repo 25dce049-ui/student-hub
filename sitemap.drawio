@@ -1,0 +1,158 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="J9wM8WHLJs9zNjmlxuRp">
+    <mxGraphModel dx="8600" dy="4650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x-7DBgP1PdGWQDk-9bXW-2" edge="1" parent="1" source="x-7DBgP1PdGWQDk-9bXW-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="370" />
+            </Array>
+            <mxPoint x="150" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x-7DBgP1PdGWQDk-9bXW-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="310" width="650" x="110" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="100" width="610" x="130" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-5" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="" vertex="1">
+          <mxGeometry height="90" width="90" x="160" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="student hub" vertex="1">
+          <mxGeometry height="80" width="440" x="290" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Dashbord&lt;div&gt;Attendence&lt;/div&gt;&lt;div&gt;marks&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="120" x="130" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="170" width="480" x="260" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-13" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/Essential_App_1-2153/education-degree-course-university-college-740.svg" value="" vertex="1">
+          <mxGeometry height="70" width="70" x="170" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-14" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="image" vertex="1">
+          <mxGeometry height="146" width="146" x="270" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-15" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="image" vertex="1">
+          <mxGeometry height="146" width="146" x="427" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="1cARZsLQy7tbFWR-wQoi-16" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="image" vertex="1">
+          <mxGeometry height="146" width="146" x="584" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="gs_uSrtFK8XNuHzJne8a-2" edge="1" parent="1" source="gs_uSrtFK8XNuHzJne8a-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gs_uSrtFK8XNuHzJne8a-5" edge="1" parent="1" source="gs_uSrtFK8XNuHzJne8a-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="675" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gs_uSrtFK8XNuHzJne8a-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="370" width="630" x="110" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="gs_uSrtFK8XNuHzJne8a-3" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0;exitY=0;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="490" as="sourcePoint" />
+            <mxPoint x="729" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gs_uSrtFK8XNuHzJne8a-4" edge="1" parent="1" source="gs_uSrtFK8XNuHzJne8a-1" style="shape=link;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;innerLoopWaypoints=1;endArrow=none;endFill=0;" target="gs_uSrtFK8XNuHzJne8a-1" value="">
+          <mxGeometry relative="1" width="100" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="730" />
+              <mxPoint x="770" y="750" />
+            </Array>
+            <mxPoint x="310" y="710" as="sourcePoint" />
+            <mxPoint x="410" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="student login" vertex="1">
+          <mxGeometry height="65" width="263" x="307" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="username" vertex="1">
+          <mxGeometry height="40" width="120" x="160" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="password" vertex="1">
+          <mxGeometry height="40" width="120" x="160" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="login" vertex="1">
+          <mxGeometry height="30" width="120" x="375" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="370" width="630" x="110" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-7" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/Essential_App_1-2153/education-degree-course-university-college-740.svg" value="" vertex="1">
+          <mxGeometry height="70" width="70" x="160" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="dashboard" vertex="1">
+          <mxGeometry height="60" width="320" x="350" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-9" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="attendance&lt;div&gt;assignment&lt;/div&gt;&lt;div&gt;courses&lt;/div&gt;&lt;div&gt;events&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="210" x="150" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-11" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="ehSaUpU2pa6Rm54bioOZ-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="1070.09" />
+              <mxPoint x="170" y="1070.09" />
+              <mxPoint x="170" y="950.09" />
+              <mxPoint x="140" y="950.09" />
+              <mxPoint x="140" y="1020.09" />
+            </Array>
+            <mxPoint x="209.99999999999977" y="1049.9999999999998" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="330" width="650" x="70" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-15" edge="1" parent="1" source="ehSaUpU2pa6Rm54bioOZ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="ehSaUpU2pa6Rm54bioOZ-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="courses" vertex="1">
+          <mxGeometry height="60" width="357" x="283" y="1450" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&#xa;&#xa;Web Development&#xa;&#xa;Java Programming&#xa;&#xa;Database Management&#xa;&#xa;Operating System&#xa;&#xa;" vertex="1">
+          <mxGeometry height="160" width="273" x="110" y="1540" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="360" width="650" x="80" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&#xa;Attendance&#xa;&#xa;Subject         Percentage&#xa;&#xa;HTML              90%&#xa;&#xa;Java              88%&#xa;&#xa;Math              95%&#xa;&#xa;" vertex="1">
+          <mxGeometry height="190" width="370" x="150" y="1980" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="attendance" vertex="1">
+          <mxGeometry height="80" width="380" x="240" y="1860" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="370" width="680" x="80" y="2350" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;----------------------------------&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Assignments&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Title&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Submission Date&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Status&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Upload Button&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;----------------------------------&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="320" x="170" y="2520" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="assignment" vertex="1">
+          <mxGeometry height="60" width="307" x="353" y="2390" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="380" width="680" x="80" y="2810" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="email&lt;div&gt;contact&lt;/div&gt;&lt;div&gt;message&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="250" x="230" y="2970" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-25" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="contact" vertex="1">
+          <mxGeometry height="78" width="273" x="427" y="2842" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="350" width="680" x="80" y="3290" as="geometry" />
+        </mxCell>
+        <mxCell id="ehSaUpU2pa6Rm54bioOZ-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="--------------------------------Student ProfilePhotoNameEnrollment No.DepartmentSemesterEdit Button--------------------------------" vertex="1">
+          <mxGeometry height="230" width="400" x="170" y="3360" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
