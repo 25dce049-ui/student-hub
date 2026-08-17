@@ -1,12 +1,12 @@
-# Ignore old/unrelated folders
-js/
-images/
-new/
-pages/
-practicle 1/
-practicle 2/
-practicle 3/
-.vscode/
+# Ignore old/unrelated root-level folders only
+/js/
+/images/
+/new/
+/pages/
+/practicle 1/
+/practicle 2/
+/practicle 3/
+/.vscode/
 
 # OS files
 .DS_Store
