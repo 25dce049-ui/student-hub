@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="StudentHub Admin Panel – manage students, courses, and portal settings." />
+  <title>Admin Panel | StudentHub</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    .admin-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 768px) {
+      .admin-grid { grid-template-columns: 1fr; }
+    }
+    .admin-sidebar nav ul { list-style: none; }
+    .admin-sidebar nav ul li a {
+      display: block;
+      padding: 0.7rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: background .2s;
+    }
+    .admin-sidebar nav ul li a:hover,
+    .admin-sidebar nav ul li a[aria-current="page"] {
+      background: var(--primary);
+      color: var(--light);
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a href="index.html" class="logo" aria-label="StudentHub Home">🎓 StudentHub</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admin.html" aria-current="page">Admin</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Admin Panel</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content" class="site-main">
+    <h1 class="section-title">Admin Panel</h1>
+
+    <div class="admin-grid">
+      <!-- Admin Sidebar Nav -->
+      <aside class="admin-sidebar sidebar" aria-label="Admin navigation">
+        <h2>Admin Menu</h2>
+        <nav aria-label="Admin sections">
+          <ul>
+            <li><a href="#" aria-current="page">Dashboard</a></li>
+            <li><a href="#">Manage Students</a></li>
+            <li><a href="#">Manage Courses</a></li>
+            <li><a href="#">Manage Events</a></li>
+            <li><a href="#">View Feedback</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Admin Content -->
+      <div>
+        <!-- Overview Cards -->
+        <section aria-labelledby="admin-stats-heading">
+          <h2 id="admin-stats-heading" class="visually-hidden">Admin Statistics</h2>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Total Students</h3>
+              <p style="font-size:2rem;font-weight:700;color:var(--primary);">1,245</p>
+            </article>
+            <article class="card">
+              <h3>Active Courses</h3>
+              <p style="font-size:2rem;font-weight:700;color:var(--primary);">18</p>
+            </article>
+            <article class="card">
+              <h3>Pending Registrations</h3>
+              <p style="font-size:2rem;font-weight:700;color:var(--primary);">32</p>
+            </article>
+            <article class="card">
+              <h3>Open Feedback</h3>
+              <p style="font-size:2rem;font-weight:700;color:var(--primary);">7</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Recent Registrations Table -->
+        <section aria-labelledby="reg-table-heading" class="mt-2">
+          <h2 id="reg-table-heading" class="section-title">Recent Registrations</h2>
+          <table class="data-table" aria-label="Recent student registrations">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Course</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aisha Khan</td><td>MCA</td>
+                <td><time datetime="2026-08-15">15 Aug 2026</time></td>
+                <td><span class="badge badge-warning">Pending</span></td>
+                <td><a href="#">Approve</a></td>
+              </tr>
+              <tr>
+                <td>Suresh Patel</td><td>BCA</td>
+                <td><time datetime="2026-08-14">14 Aug 2026</time></td>
+                <td><span class="badge badge-success">Approved</span></td>
+                <td><a href="#">View</a></td>
+              </tr>
+              <tr>
+                <td>Neha Joshi</td><td>B.Sc. CS</td>
+                <td><time datetime="2026-08-13">13 Aug 2026</time></td>
+                <td><span class="badge badge-danger">Rejected</span></td>
+                <td><a href="#">Review</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 StudentHub Admin. <a href="index.html">Back to Site</a></p>
+  </footer>
+
+</body>
+</html>

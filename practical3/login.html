@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to StudentHub – responsive login page." />
+  <title>Login | StudentHub – Practical 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Centered login card layout using Flexbox */
+    .login-wrapper {
+      min-height: calc(100vh - 130px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .login-card {
+      background: var(--clr-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 440px;
+    }
+    .login-card h1 { font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--clr-secondary); }
+    .divider { display: flex; align-items: center; gap: .8rem; margin: 1.2rem 0; color: var(--clr-muted); font-size: .85rem; }
+    .divider::before, .divider::after { content: ''; flex: 1; border-top: 1px solid var(--clr-border); }
+    .social-btn {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      width: 100%; padding: .6rem;
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      background: var(--clr-surface);
+      font-size: .95rem;
+      cursor: pointer;
+      transition: background var(--transition);
+      margin-bottom: .6rem;
+      text-decoration: none;
+      color: var(--clr-dark);
+    }
+    .social-btn:hover { background: #f1f5f9; }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav class="navbar-custom" role="banner" aria-label="Primary navigation">
+      <a href="index.html" class="navbar-brand">🎓 StudentHub</a>
+      <button class="hamburger" id="hamburger-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="main-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html" aria-current="page">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="login-wrapper">
+      <div class="login-card">
+        <h1>Welcome Back 👋</h1>
+
+        <form action="#" method="post" novalidate aria-label="Login form">
+          <div class="field-group">
+            <label for="l-email">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="l-email" name="email" autocomplete="username" required aria-required="true" placeholder="student@example.com" />
+          </div>
+          <div class="field-group">
+            <label for="l-pwd">Password <span aria-hidden="true">*</span></label>
+            <input type="password" id="l-pwd" name="password" autocomplete="current-password" required aria-required="true" />
+          </div>
+          <div class="field-group" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;">
+            <label style="font-weight:normal;display:flex;gap:.4rem;align-items:center;cursor:pointer;">
+              <input type="checkbox" name="remember" style="width:auto;" /> Remember me
+            </label>
+            <a href="#" style="font-size:.88rem;">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-primary-custom" style="width:100%;margin-top:.5rem;">Login</button>
+        </form>
+
+        <div class="divider">or continue with</div>
+        <a href="#" class="social-btn" aria-label="Sign in with Google">🔵 Sign in with Google</a>
+        <a href="#" class="social-btn" aria-label="Sign in with Microsoft">🟦 Sign in with Microsoft</a>
+
+        <p style="text-align:center;margin-top:1.2rem;font-size:.9rem;">
+          Don't have an account? <a href="register.html">Register here</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bottom" style="max-width:var(--container-max);margin:0 auto;border:none;">
+      <span>&copy; 2026 StudentHub.</span>
+      <span><a href="contact.html">Contact</a> | <a href="#">Privacy Policy</a></span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!exp));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

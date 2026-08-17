@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your StudentHub account to access courses, results, and campus services." />
+  <title>Register | StudentHub</title>
+  <link rel="stylesheet" href="css/base.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a href="index.html" class="logo" aria-label="StudentHub Home">🎓 StudentHub</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="register.html" aria-current="page">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Register</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content" class="site-main">
+    <h1 class="section-title">Create an Account</h1>
+    <p class="mb-1">Already have an account? <a href="login.html">Log in here</a>.</p>
+
+    <section aria-labelledby="register-form-heading" style="max-width:620px;">
+      <h2 id="register-form-heading" class="visually-hidden">Registration Form</h2>
+
+      <form action="#" method="post" novalidate aria-label="Student registration form">
+
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div class="form-group">
+            <label for="full-name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="full-name" name="fullName"
+                   autocomplete="name" required
+                   placeholder="e.g. Rahul Verma"
+                   aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth <span aria-hidden="true">*</span></label>
+            <input type="date" id="dob" name="dob"
+                   required aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="">-- Select --</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other / Prefer not to say</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="mt-1">
+          <legend>Contact Details</legend>
+          <div class="form-group">
+            <label for="email">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email"
+                   autocomplete="email" required
+                   placeholder="student@example.com"
+                   aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number <span aria-hidden="true">*</span></label>
+            <input type="tel" id="mobile" name="mobile"
+                   autocomplete="tel" required
+                   placeholder="10-digit number"
+                   aria-required="true" />
+          </div>
+        </fieldset>
+
+        <fieldset class="mt-1">
+          <legend>Academic Information</legend>
+          <div class="form-group">
+            <label for="course">Course <span aria-hidden="true">*</span></label>
+            <select id="course" name="course" required aria-required="true">
+              <option value="">-- Select Course --</option>
+              <option value="bsc-cs">B.Sc. Computer Science</option>
+              <option value="bca">BCA</option>
+              <option value="mca">MCA</option>
+              <option value="msc-cs">M.Sc. Computer Science</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="year">Year of Study <span aria-hidden="true">*</span></label>
+            <select id="year" name="year" required aria-required="true">
+              <option value="">-- Select Year --</option>
+              <option value="1">First Year</option>
+              <option value="2">Second Year</option>
+              <option value="3">Third Year</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="mt-1">
+          <legend>Account Security</legend>
+          <div class="form-group">
+            <label for="password">Password <span aria-hidden="true">*</span></label>
+            <input type="password" id="password" name="password"
+                   autocomplete="new-password" required
+                   aria-required="true"
+                   aria-describedby="pwd-hint" />
+            <small id="pwd-hint">Minimum 8 characters with a number and a special character.</small>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password <span aria-hidden="true">*</span></label>
+            <input type="password" id="confirm-password" name="confirmPassword"
+                   autocomplete="new-password" required
+                   aria-required="true" />
+          </div>
+        </fieldset>
+
+        <div class="form-group mt-1">
+          <label>
+            <input type="checkbox" name="terms" required aria-required="true" />
+            I agree to the <a href="#">Terms &amp; Conditions</a> and
+            <a href="#">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 StudentHub. All rights reserved. |
+      <a href="contact.html">Contact Us</a> |
+      <a href="faq.html">FAQ</a>
+    </p>
+  </footer>
+
+</body>
+</html>

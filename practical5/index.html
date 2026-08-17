@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Practical 5 – Student Registration Form with JavaScript Validation, Regex, and Password Strength Meter." />
+  <title>Practical 5 – Registration Form | StudentHub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="navbar" role="banner">
+      <a href="../practical2/index.html" class="logo" aria-label="StudentHub Home">🎓 StudentHub</a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="../practical2/index.html">Home</a></li>
+          <li><a href="../practical4/index.html">Practical 4</a></li>
+          <li><a href="../practical2/login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="page-wrap">
+
+      <!-- ================================================
+           REGISTRATION FORM CARD
+           ================================================ -->
+      <div class="form-card">
+
+        <h1>Create Your Account</h1>
+        <p class="subtitle">
+          Practical 5 – HTML5 inputs · JS Regex Validation · Real-time Feedback ·
+          Password Strength Meter · Canvas CAPTCHA
+        </p>
+        <p class="subtitle" style="margin-top:-.8rem;">
+          Already registered? <a href="../practical2/login.html">Login here</a>.
+        </p>
+
+        <!-- Step Progress Indicator -->
+        <ol class="steps" aria-label="Registration progress">
+          <li class="step active">Personal Info</li>
+          <li class="step">Academic</li>
+          <li class="step">Security</li>
+        </ol>
+
+        <!-- ==================== FORM ==================== -->
+        <form id="registration-form" action="#" method="post" novalidate
+              aria-label="Student registration form" id="form-section">
+
+          <!-- ---- SECTION 1: Personal Information ---- -->
+          <fieldset>
+            <legend>Personal Information</legend>
+
+            <div class="field-row">
+              <!-- First Name -->
+              <div class="field-group" id="fg-fname">
+                <label for="first-name">
+                  First Name <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="first-name" name="firstName"
+                       autocomplete="given-name"
+                       required aria-required="true"
+                       aria-describedby="err-fname"
+                       placeholder="e.g. Rahul" />
+                <span class="val-icon" aria-hidden="true"></span>
+                <span class="err-msg" id="err-fname" role="alert"></span>
+              </div>
+
+              <!-- Last Name -->
+              <div class="field-group" id="fg-lname">
+                <label for="last-name">
+                  Last Name <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="last-name" name="lastName"
+                       autocomplete="family-name"
+                       required aria-required="true"
+                       aria-describedby="err-lname"
+                       placeholder="e.g. Verma" />
+                <span class="val-icon" aria-hidden="true"></span>
+                <span class="err-msg" id="err-lname" role="alert"></span>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="field-group" id="fg-email">
+              <label for="email">
+                Email Address <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <input type="email" id="email" name="email"
+                     autocomplete="email"
+                     required aria-required="true"
+                     aria-describedby="err-email"
+                     placeholder="student@example.com" />
+              <span class="val-icon" aria-hidden="true"></span>
+              <span class="err-msg" id="err-email" role="alert"></span>
+            </div>
+
+            <div class="field-row">
+              <!-- Mobile -->
+              <div class="field-group" id="fg-mobile">
+                <label for="mobile">
+                  Mobile Number <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <input type="tel" id="mobile" name="mobile"
+                       autocomplete="tel"
+                       required aria-required="true"
+                       aria-describedby="err-mobile"
+                       placeholder="10-digit number"
+                       maxlength="10" inputmode="numeric" />
+                <span class="val-icon" aria-hidden="true"></span>
+                <span class="err-msg" id="err-mobile" role="alert"></span>
+                <span class="hint">Indian format: starts with 6–9</span>
+              </div>
+
+              <!-- Date of Birth -->
+              <div class="field-group" id="fg-dob">
+                <label for="dob">
+                  Date of Birth <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <input type="date" id="dob" name="dob"
+                       required aria-required="true"
+                       aria-describedby="err-dob"
+                       max="2011-12-31" />
+                <span class="val-icon" aria-hidden="true"></span>
+                <span class="err-msg" id="err-dob" role="alert"></span>
+              </div>
+            </div>
+
+            <!-- Gender (radio group) -->
+            <div class="field-group" id="gender-group-wrap">
+              <fieldset>
+                <legend>Gender <span class="required-star" aria-hidden="true">*</span></legend>
+                <div class="gender-group" role="radiogroup" aria-required="true">
+                  <label class="check-label">
+                    <input type="radio" name="gender" value="male" required /> Male
+                  </label>
+                  <label class="check-label">
+                    <input type="radio" name="gender" value="female" /> Female
+                  </label>
+                  <label class="check-label">
+                    <input type="radio" name="gender" value="other" /> Other / Prefer not to say
+                  </label>
+                </div>
+              </fieldset>
+              <span class="err-msg" id="err-gender" role="alert"></span>
+            </div>
+
+          </fieldset>
+
+          <!-- ---- SECTION 2: Academic Information ---- -->
+          <fieldset>
+            <legend>Academic Information</legend>
+
+            <div class="field-row">
+              <!-- Course -->
+              <div class="field-group" id="fg-course">
+                <label for="course">
+                  Course <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <select id="course" name="course"
+                        required aria-required="true"
+                        aria-describedby="err-course">
+                  <option value="">-- Select Course --</option>
+                  <option value="bsc-cs">B.Sc. Computer Science</option>
+                  <option value="bca">BCA</option>
+                  <option value="mca">MCA</option>
+                  <option value="msc-cs">M.Sc. Computer Science</option>
+                  <option value="bcom">B.Com</option>
+                  <option value="bba">BBA</option>
+                </select>
+                <span class="val-icon" aria-hidden="true"></span>
+                <span class="err-msg" id="err-course" role="alert"></span>
+              </div>
+
+              <!-- Year -->
+              <div class="field-group" id="fg-year">
+                <label for="year">
+                  Year of Study <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <select id="year" name="year"
+                        required aria-required="true"
+                        aria-describedby="err-year">
+                  <option value="">-- Select Year --</option>
+                  <option value="1">First Year</option>
+                  <option value="2">Second Year</option>
+                  <option value="3">Third Year</option>
+                  <option value="4">Fourth Year (PG)</option>
+                </select>
+                <span class="val-icon" aria-hidden="true"></span>
+                <span class="err-msg" id="err-year" role="alert"></span>
+              </div>
+            </div>
+
+            <!-- Roll Number (optional) -->
+            <div class="field-group" id="fg-roll">
+              <label for="roll-number">Roll Number <small>(optional)</small></label>
+              <input type="text" id="roll-number" name="rollNumber"
+                     aria-describedby="err-roll hint-roll"
+                     placeholder="e.g. BCA/2024/021" />
+              <span class="val-icon" aria-hidden="true"></span>
+              <span class="err-msg" id="err-roll" role="alert"></span>
+              <span class="hint" id="hint-roll">Format: COURSE/YEAR/NUMBER (e.g. BCA/2024/021)</span>
+            </div>
+
+          </fieldset>
+
+          <!-- ---- SECTION 3: Account Security ---- -->
+          <fieldset>
+            <legend>Account Security</legend>
+
+            <!-- Password -->
+            <div class="field-group" id="fg-pwd">
+              <label for="password">
+                Password <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <div class="pwd-wrap">
+                <input type="password" id="password" name="password"
+                       autocomplete="new-password"
+                       required aria-required="true"
+                       aria-describedby="err-pwd strength-label"
+                       placeholder="Create a strong password" />
+                <button type="button" class="pwd-toggle" id="pwd-toggle-1"
+                        aria-label="Show password">👁</button>
+              </div>
+              <span class="val-icon" aria-hidden="true"></span>
+              <span class="err-msg" id="err-pwd" role="alert"></span>
+
+              <!-- Strength Meter -->
+              <div id="strength-wrap" data-strength="0" aria-hidden="true">
+                <div class="strength-bar-wrap">
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                </div>
+                <span class="strength-label" id="strength-label"></span>
+              </div>
+
+              <!-- Password Requirements Checklist -->
+              <ul class="requirements-list" aria-label="Password requirements">
+                <li id="req-len"     class="req-unmet"><span class="req-icon">○</span> At least 8 characters</li>
+                <li id="req-upper"   class="req-unmet"><span class="req-icon">○</span> At least one uppercase letter</li>
+                <li id="req-lower"   class="req-unmet"><span class="req-icon">○</span> At least one lowercase letter</li>
+                <li id="req-num"     class="req-unmet"><span class="req-icon">○</span> At least one number</li>
+                <li id="req-special" class="req-unmet"><span class="req-icon">○</span> At least one special character (@$!%*?&amp;_#^)</li>
+              </ul>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="field-group" id="fg-cpwd">
+              <label for="confirm-pwd">
+                Confirm Password <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <div class="pwd-wrap">
+                <input type="password" id="confirm-pwd" name="confirmPassword"
+                       autocomplete="new-password"
+                       required aria-required="true"
+                       aria-describedby="err-cpwd"
+                       placeholder="Re-enter your password" />
+                <button type="button" class="pwd-toggle" id="pwd-toggle-2"
+                        aria-label="Show password">👁</button>
+              </div>
+              <span class="val-icon" aria-hidden="true"></span>
+              <span class="err-msg" id="err-cpwd" role="alert"></span>
+            </div>
+
+          </fieldset>
+
+          <!-- ---- CAPTCHA (Advanced Extension) ---- -->
+          <fieldset>
+            <legend>Security Check</legend>
+
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem;">
+              Type the characters shown in the image. Click the image to refresh.
+            </p>
+
+            <div class="captcha-wrap">
+              <!-- Canvas CAPTCHA -->
+              <canvas id="captcha-canvas" width="175" height="52"
+                      role="img"
+                      aria-label="CAPTCHA image – click to refresh"
+                      tabindex="0"></canvas>
+              <button type="button" id="captcha-refresh"
+                      aria-label="Refresh CAPTCHA">🔄</button>
+            </div>
+
+            <div class="field-group" id="fg-captcha">
+              <label for="captcha-input">
+                Enter CAPTCHA <span class="required-star" aria-hidden="true">*</span>
+              </label>
+              <input type="text" id="captcha-input" name="captcha"
+                     required aria-required="true"
+                     aria-describedby="err-captcha"
+                     placeholder="Type 6 characters above"
+                     maxlength="6"
+                     autocomplete="off"
+                     style="text-transform:uppercase;letter-spacing:.2rem;" />
+              <span class="val-icon" aria-hidden="true"></span>
+              <span class="err-msg" id="err-captcha" role="alert"></span>
+            </div>
+
+          </fieldset>
+
+          <!-- ---- Terms & Conditions ---- -->
+          <div class="field-group" id="fg-terms">
+            <label class="check-label">
+              <input type="checkbox" id="terms" name="terms"
+                     required aria-required="true"
+                     aria-describedby="err-terms" />
+              I have read and agree to the
+              <a href="#" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+              and <a href="#" target="_blank" rel="noopener">Privacy Policy</a>.
+              <span class="required-star" aria-hidden="true">*</span>
+            </label>
+            <span class="err-msg" id="err-terms" role="alert"></span>
+          </div>
+
+          <!-- ---- Buttons ---- -->
+          <button type="submit" class="submit-btn" id="submit-btn">
+            Create My Account
+          </button>
+          <button type="reset" id="reset-btn"
+                  style="display:block;width:100%;margin-top:.6rem;padding:.65rem;background:transparent;border:1.5px solid var(--border);border-radius:var(--radius);cursor:pointer;font-size:.95rem;color:var(--muted);transition:border-color .2s,color .2s;"
+                  onmouseover="this.style.borderColor='var(--danger)';this.style.color='var(--danger)'"
+                  onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">
+            Reset Form
+          </button>
+
+        </form>
+
+        <!-- ---- SUCCESS PANEL ---- -->
+        <div id="success-panel" tabindex="-1" aria-live="polite">
+          <div class="success-icon" aria-hidden="true">🎉</div>
+          <h2>Registration Successful!</h2>
+          <p>
+            Welcome to StudentHub! Your account has been created.<br />
+            Please check your email for a confirmation link.
+          </p>
+          <a href="../practical2/login.html"
+             style="display:inline-block;margin-top:1.2rem;padding:.7rem 2rem;background:var(--primary);color:#fff;border-radius:var(--radius);text-decoration:none;font-weight:700;">
+            Go to Login
+          </a>
+        </div>
+
+      </div><!-- /form-card -->
+
+      <!-- ================================================
+           LIVE SUMMARY SIDEBAR
+           ================================================ -->
+      <aside class="summary-card" aria-label="Registration summary" aria-live="polite">
+        <h2>📋 Form Summary</h2>
+
+        <div class="summary-row"><span class="s-label">First Name</span><span class="s-val" id="s-fname">—</span></div>
+        <div class="summary-row"><span class="s-label">Last Name</span><span class="s-val" id="s-lname">—</span></div>
+        <div class="summary-row"><span class="s-label">Email</span><span class="s-val" id="s-email">—</span></div>
+        <div class="summary-row"><span class="s-label">Course</span><span class="s-val" id="s-course">—</span></div>
+
+        <hr style="border-color:var(--border);margin:1rem 0;" />
+
+        <h2 style="font-size:.95rem;margin-bottom:.6rem;">🔑 Password Requirements</h2>
+        <ul class="requirements-list" aria-label="Password strength requirements" id="summary-req-list">
+          <li id="req-len-s"     class="req-unmet"><span class="req-icon">○</span> 8+ characters</li>
+          <li id="req-upper-s"   class="req-unmet"><span class="req-icon">○</span> Uppercase letter</li>
+          <li id="req-lower-s"   class="req-unmet"><span class="req-icon">○</span> Lowercase letter</li>
+          <li id="req-num-s"     class="req-unmet"><span class="req-icon">○</span> Number</li>
+          <li id="req-special-s" class="req-unmet"><span class="req-icon">○</span> Special character</li>
+        </ul>
+
+        <hr style="border-color:var(--border);margin:1rem 0;" />
+        <p style="font-size:.78rem;color:var(--muted);">
+          ✅ = Valid &nbsp; ❌ = Needs attention<br />
+          Fields marked <span style="color:var(--danger);">*</span> are required.
+        </p>
+      </aside>
+
+    </div><!-- /page-wrap -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <p>
+      &copy; 2026 StudentHub – Practical 5: Registration Form Validation &nbsp;|&nbsp;
+      <a href="../practical2/index.html">← Home</a> &nbsp;|&nbsp;
+      <a href="../practical4/index.html">← Practical 4</a>
+    </p>
+  </footer>
+
+  <script src="js/validate.js"></script>
+
+  <!-- Sync sidebar requirement list with main checklist -->
+  <script>
+    // Mirror the password requirement states to the sidebar list
+    const observer = new MutationObserver(() => {
+      ['len','upper','lower','num','special'].forEach(key => {
+        const src = document.getElementById('req-' + key);
+        const dst = document.getElementById('req-' + key + '-s');
+        if (!src || !dst) return;
+        dst.className = src.className;
+        const icon = dst.querySelector('.req-icon');
+        const srcIcon = src.querySelector('.req-icon');
+        if (icon && srcIcon) icon.textContent = srcIcon.textContent;
+      });
+    });
+
+    document.querySelectorAll('[id^="req-"]').forEach(el => {
+      observer.observe(el, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
+    });
+  </script>
+
+</body>
+</html>

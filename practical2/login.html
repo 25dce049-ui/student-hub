@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Log in to your StudentHub account." />
+  <title>Login | StudentHub</title>
+  <link rel="stylesheet" href="css/base.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a href="index.html" class="logo" aria-label="StudentHub Home">🎓 StudentHub</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html" aria-current="page">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Login</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content" class="site-main">
+    <section aria-labelledby="login-heading" style="max-width:480px; margin:0 auto;">
+      <h1 id="login-heading" class="section-title">Sign In</h1>
+      <p class="mb-1">Don't have an account? <a href="register.html">Register here</a>.</p>
+
+      <form action="#" method="post" novalidate aria-label="Login form">
+        <div class="form-group">
+          <label for="login-email">Email Address <span aria-hidden="true">*</span></label>
+          <input type="email" id="login-email" name="email"
+                 autocomplete="username" required
+                 placeholder="student@example.com"
+                 aria-required="true" />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password <span aria-hidden="true">*</span></label>
+          <input type="password" id="login-password" name="password"
+                 autocomplete="current-password" required
+                 aria-required="true" />
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="remember" />
+            Remember me on this device
+          </label>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+        <p class="mt-1"><a href="#">Forgot your password?</a></p>
+      </form>
+
+      <hr style="margin:2rem 0; border-color:var(--border);" />
+
+      <p class="text-center">
+        <a href="admin.html" class="btn btn-outline" style="border-color:var(--primary);color:var(--primary);">Admin Login</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 StudentHub. All rights reserved. |
+      <a href="contact.html">Contact Us</a>
+    </p>
+  </footer>
+
+</body>
+</html>

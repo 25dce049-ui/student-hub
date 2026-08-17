@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Practical 4 – JavaScript DOM Manipulation, Event Handling, and UI Interactivity for StudentHub." />
+  <title>Practical 4 – JS Interactivity | StudentHub</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Pulse keyframe for card click feedback */
+    @keyframes pulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+    .trans-card.clicked { animation: pulse .35s ease; }
+  </style>
+</head>
+<body>
+
+  <!-- Skip to content (Accessibility) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ================================================
+       FEATURE 1: NOTIFICATION BANNER
+       ================================================ -->
+  <div id="notification-banner" role="alert" aria-live="polite">
+    <span>🎓 <strong>Semester IV Registration</strong> is now open! Deadline: 25 Aug 2026.
+      <a href="#">Register Now →</a>
+    </span>
+    <button id="close-banner" aria-label="Dismiss notification">✕</button>
+  </div>
+
+  <!-- ================================================
+       FEATURE 2: NAVBAR with HAMBURGER MENU
+       ================================================ -->
+  <header>
+    <nav class="navbar" aria-label="Primary navigation">
+      <a href="index.html" class="logo-link" aria-label="StudentHub Home">🎓 StudentHub</a>
+
+      <!-- FEATURE 3: THEME SWITCHER BUTTON -->
+      <button id="theme-btn" aria-label="Switch to dark mode">🌙 Dark Mode</button>
+
+      <button class="hamburger" id="hamburger-btn"
+              aria-controls="main-nav"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="main-nav" role="list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="#faq-section">FAQ</a></li>
+        <li><a href="#slider-section">Announcements</a></li>
+        <li><a href="#modal-section">Events</a></li>
+        <li><a href="#cards-section">Courses</a></li>
+        <li><a href="../practical2/login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================================================
+       MAIN CONTENT
+       ================================================ -->
+  <main id="main-content">
+    <div class="container">
+
+      <h1 class="page-title">Practical 4 – JS DOM Interactivity</h1>
+      <p class="page-subtitle">
+        Demonstrates: Notification Banner · Hamburger Nav · Dark/Light Theme ·
+        FAQ Accordion · Modal Popup · Content Slider · Transition Cards · localStorage
+      </p>
+
+      <!-- ============================================
+           FEATURE 4 + 5: FAQ ACCORDION + MODAL DEMO
+           ============================================ -->
+      <div class="features-layout">
+
+        <!-- ---- FAQ ACCORDION ---- -->
+        <section id="faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading" class="sec-title">FAQ – Collapsible Accordion</h2>
+          <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem;">
+            Click a question to expand. Use ↑ ↓ arrow keys to navigate.
+          </p>
+
+          <ul class="faq-list" role="list">
+
+            <li class="faq-item">
+              <button class="faq-btn" id="faq-btn-1"
+                      aria-expanded="false"
+                      aria-controls="faq-ans-1">
+                How do I register on StudentHub?
+                <span class="faq-icon" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+                Click <strong>Register</strong> in the nav. Fill your details, set a password, and submit. You'll receive a confirmation email after admin approval.
+              </div>
+            </li>
+
+            <li class="faq-item">
+              <button class="faq-btn" id="faq-btn-2"
+                      aria-expanded="false"
+                      aria-controls="faq-ans-2">
+                I forgot my password. What should I do?
+                <span class="faq-icon" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+                Go to the Login page and click <em>Forgot your password?</em>. Enter your registered email and a reset link will be sent within 5 minutes.
+              </div>
+            </li>
+
+            <li class="faq-item">
+              <button class="faq-btn" id="faq-btn-3"
+                      aria-expanded="false"
+                      aria-controls="faq-ans-3">
+                When are semester results published?
+                <span class="faq-icon" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+                Results are published within 30 days after exams. You'll receive an email notification when they're available on your Dashboard.
+              </div>
+            </li>
+
+            <li class="faq-item">
+              <button class="faq-btn" id="faq-btn-4"
+                      aria-expanded="false"
+                      aria-controls="faq-ans-4">
+                How do I update my personal information?
+                <span class="faq-icon" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+                Log in and go to <strong>My Profile</strong>. You can update mobile number and address directly. For name/DOB changes, contact the admin office.
+              </div>
+            </li>
+
+            <li class="faq-item">
+              <button class="faq-btn" id="faq-btn-5"
+                      aria-expanded="false"
+                      aria-controls="faq-ans-5">
+                Is my personal data secure on this portal?
+                <span class="faq-icon" aria-hidden="true">＋</span>
+              </button>
+              <div class="faq-answer" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+                Yes. StudentHub uses HTTPS and stores passwords in hashed form. We do not share your data with third parties. See our Privacy Policy for details.
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- ---- MODAL POPUP ---- -->
+        <section id="modal-section" aria-labelledby="modal-sec-heading">
+          <h2 id="modal-sec-heading" class="sec-title">Modal Popup</h2>
+          <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem;">
+            Opens a dialog with focus trap and Escape key support.
+          </p>
+
+          <div class="card-comp">
+            <h3 style="margin-bottom:.8rem;">TechSpark Hackathon 2026</h3>
+            <p style="color:var(--muted);font-size:.93rem;margin-bottom:1rem;">
+              A 24-hour inter-college hackathon — AI, IoT, FinTech. Teams of 2–4.
+              Prizes worth ₹1,00,000.
+            </p>
+            <button class="open-modal-btn" aria-haspopup="dialog">
+              View Details &amp; Register
+            </button>
+          </div>
+
+          <div class="card-comp mt-1">
+            <h3 style="margin-bottom:.8rem;">Web Dev Workshop</h3>
+            <p style="color:var(--muted);font-size:.93rem;margin-bottom:1rem;">
+              Hands-on session covering HTML5, CSS3 &amp; JavaScript. Open to all years. Free entry.
+            </p>
+            <button class="open-modal-btn" aria-haspopup="dialog">
+              View Details
+            </button>
+          </div>
+        </section>
+
+      </div><!-- /features-layout -->
+
+      <!-- ============================================
+           FEATURE 6: CONTENT SLIDER
+           ============================================ -->
+      <section id="slider-section" class="mt-2" aria-labelledby="slider-heading">
+        <h2 id="slider-heading" class="sec-title">Announcements Slider</h2>
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:1rem;">
+          Auto-advances every 4 s. Use ← → arrows or dots. Pauses on hover/focus.
+        </p>
+
+        <!-- Screen reader live region -->
+        <div id="slider-live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+        <div class="slider-wrap" aria-roledescription="carousel" aria-label="Campus announcements">
+          <div class="slider-track" id="slider-track" aria-live="off">
+
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 1 of 5">
+              <div class="slide-icon" aria-hidden="true">📚</div>
+              <h3>Semester IV Registration Open</h3>
+              <p>Log in to select your subjects. Deadline: <strong>25 August 2026</strong>. Late registrations not accepted.</p>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 5">
+              <div class="slide-icon" aria-hidden="true">💻</div>
+              <h3>TechSpark Hackathon 2026</h3>
+              <p>Register before <strong>5 September</strong>. 24-hour event. Prizes worth ₹1,00,000. Form teams of 2–4.</p>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 5">
+              <div class="slide-icon" aria-hidden="true">🎭</div>
+              <h3>Annual Cultural Fest – Rang 2026</h3>
+              <p>Music, dance, drama &amp; art competitions. <strong>5–7 October 2026.</strong> 30+ colleges participating.</p>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 5">
+              <div class="slide-icon" aria-hidden="true">💼</div>
+              <h3>Career Fair 2026</h3>
+              <p>Meet 50+ top recruiters. <strong>15 November 2026.</strong> Bring your resume. Limited seats — register early!</p>
+            </div>
+
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 5 of 5">
+              <div class="slide-icon" aria-hidden="true">🏆</div>
+              <h3>Sports Day 2026</h3>
+              <p>Cricket, football, track &amp; field, badminton. <strong>1 December 2026.</strong> Open to all students.</p>
+            </div>
+
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn" id="slider-prev" aria-label="Previous slide">&#8592;</button>
+            <div class="slider-dots" id="slider-dots" role="tablist" aria-label="Select slide"></div>
+            <button class="slider-btn" id="slider-next" aria-label="Next slide">&#8594;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+           FEATURE 7: TRANSITION CARDS  (Intermediate)
+           ============================================ -->
+      <section id="cards-section" class="mt-2" aria-labelledby="cards-heading">
+        <h2 id="cards-heading" class="sec-title">Course Cards – Hover &amp; Click Transitions</h2>
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:.5rem;">
+          Hover for lift effect. Click for pulse animation. Keyboard-accessible via Tab + Enter/Space.
+        </p>
+
+        <div class="trans-cards">
+          <div class="trans-card" role="button" tabindex="0"
+               aria-label="Web Technologies course"
+               onclick="showToast('Web Technologies selected!','success')">
+            <div class="tc-icon" aria-hidden="true">🌐</div>
+            <h3>Web Technologies</h3>
+            <p style="font-size:.82rem;color:var(--muted);">HTML5 · CSS3 · JavaScript</p>
+          </div>
+          <div class="trans-card" role="button" tabindex="0"
+               aria-label="Database Management course"
+               onclick="showToast('Database Management selected!','success')">
+            <div class="tc-icon" aria-hidden="true">🗄️</div>
+            <h3>Database Management</h3>
+            <p style="font-size:.82rem;color:var(--muted);">SQL · ER Diagrams · Normalization</p>
+          </div>
+          <div class="trans-card" role="button" tabindex="0"
+               aria-label="Data Structures course"
+               onclick="showToast('Data Structures selected!','success')">
+            <div class="tc-icon" aria-hidden="true">🌲</div>
+            <h3>Data Structures</h3>
+            <p style="font-size:.82rem;color:var(--muted);">Arrays · Trees · Graphs</p>
+          </div>
+          <div class="trans-card" role="button" tabindex="0"
+               aria-label="Operating Systems course"
+               onclick="showToast('Operating Systems selected!','success')">
+            <div class="tc-icon" aria-hidden="true">💻</div>
+            <h3>Operating Systems</h3>
+            <p style="font-size:.82rem;color:var(--muted);">Process · Memory · File Systems</p>
+          </div>
+          <div class="trans-card" role="button" tabindex="0"
+               aria-label="Python Programming course"
+               onclick="showToast('Python Programming selected!','success')">
+            <div class="tc-icon" aria-hidden="true">🐍</div>
+            <h3>Python Programming</h3>
+            <p style="font-size:.82rem;color:var(--muted);">OOP · Libraries · Projects</p>
+          </div>
+          <div class="trans-card" role="button" tabindex="0"
+               aria-label="Mathematics course"
+               onclick="showToast('Mathematics selected!','success')">
+            <div class="tc-icon" aria-hidden="true">📐</div>
+            <h3>Mathematics – II</h3>
+            <p style="font-size:.82rem;color:var(--muted);">Calculus · Linear Algebra</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /container -->
+  </main>
+
+  <!-- ================================================
+       MODAL DIALOG (hidden by default)
+       ================================================ -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog"
+       aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close dialog">✕</button>
+      <h2 id="modal-title">Event Registration</h2>
+      <p>
+        <strong>TechSpark Hackathon 2026</strong><br />
+        📅 10–11 September 2026 &nbsp;|&nbsp; 📍 College Auditorium, Pune<br />
+        Teams of 2–4 · Categories: AI, IoT, FinTech<br />
+        Prize Pool: <strong>₹1,00,000</strong>
+      </p>
+      <p>Fill in your details below to register your team.</p>
+      <form action="#" method="post" aria-label="Event registration form" novalidate>
+        <div style="margin-bottom:.8rem;">
+          <label for="m-name" style="display:block;font-weight:600;margin-bottom:.3rem;">Team Name</label>
+          <input type="text" id="m-name" name="teamName"
+                 style="width:100%;padding:.5rem .8rem;border:1.5px solid var(--border);border-radius:6px;font-size:.95rem;" />
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label for="m-email" style="display:block;font-weight:600;margin-bottom:.3rem;">Contact Email</label>
+          <input type="email" id="m-email" name="email"
+                 style="width:100%;padding:.5rem .8rem;border:1.5px solid var(--border);border-radius:6px;font-size:.95rem;" />
+        </div>
+        <button type="submit" class="btn"
+                onclick="closeModal(); showToast('Registration submitted!','success'); return false;">
+          Register Team
+        </button>
+        <button type="button" class="btn"
+                style="background:var(--muted);margin-left:.5rem;"
+                onclick="closeModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 StudentHub – Practical 4: JS DOM Manipulation &amp; Interactivity</p>
+    <p><a href="../practical2/index.html">← Practical 2</a> &nbsp;|&nbsp;
+       <a href="../practical3/index.html">← Practical 3</a> &nbsp;|&nbsp;
+       <a href="../practical5/index.html">Practical 5 →</a></p>
+  </footer>
+
+  <!-- Main JS (deferred to run after DOM is ready) -->
+  <script src="js/main.js"></script>
+
+  <!-- Inline: expose closeModal to HTML onclick attribute -->
+  <script>
+    // Make closeModal accessible from inline onclick handlers in the modal
+    function closeModal() {
+      const overlay = document.getElementById('modal-overlay');
+      if (overlay) {
+        overlay.classList.remove('open');
+        overlay.setAttribute('hidden', '');
+        // Return focus to last focused element tracked by main.js
+        if (window._lastFocused) window._lastFocused.focus();
+      }
+    }
+  </script>
+
+</body>
+</html>

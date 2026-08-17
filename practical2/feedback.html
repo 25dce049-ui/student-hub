@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Share your feedback and suggestions with the StudentHub team." />
+  <title>Feedback | StudentHub</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    .rating-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .rating-group input[type="radio"] {
+      width: auto;
+    }
+    .rating-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-weight: normal;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a href="index.html" class="logo" aria-label="StudentHub Home">🎓 StudentHub</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html" aria-current="page">Feedback</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Feedback</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content" class="site-main">
+    <h1 class="section-title">Share Your Feedback</h1>
+    <p class="mb-1">Your feedback helps us improve StudentHub for everyone.</p>
+
+    <div class="content-sidebar">
+      <section aria-labelledby="feedback-form-heading" style="max-width:640px;">
+        <h2 id="feedback-form-heading" class="visually-hidden">Feedback Form</h2>
+        <form action="#" method="post" novalidate aria-label="Feedback form">
+
+          <div class="form-group">
+            <label for="fb-name">Full Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="fb-name" name="name"
+                   autocomplete="name" required aria-required="true" />
+          </div>
+
+          <div class="form-group">
+            <label for="fb-email">Email Address <span aria-hidden="true">*</span></label>
+            <input type="email" id="fb-email" name="email"
+                   autocomplete="email" required aria-required="true" />
+          </div>
+
+          <div class="form-group">
+            <label for="fb-category">Feedback Category</label>
+            <select id="fb-category" name="category">
+              <option value="">-- Select --</option>
+              <option value="portal">Portal Usability</option>
+              <option value="courses">Course Content</option>
+              <option value="events">Events</option>
+              <option value="support">Support &amp; Help</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Overall Rating <span aria-hidden="true">*</span></legend>
+            <div class="rating-group" role="radiogroup" aria-required="true">
+              <label><input type="radio" name="rating" value="5" required /> ⭐⭐⭐⭐⭐ Excellent</label>
+              <label><input type="radio" name="rating" value="4" /> ⭐⭐⭐⭐ Good</label>
+              <label><input type="radio" name="rating" value="3" /> ⭐⭐⭐ Average</label>
+              <label><input type="radio" name="rating" value="2" /> ⭐⭐ Poor</label>
+              <label><input type="radio" name="rating" value="1" /> ⭐ Very Poor</label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="fb-message">Your Feedback <span aria-hidden="true">*</span></label>
+            <textarea id="fb-message" name="message" rows="5"
+                      required aria-required="true"
+                      placeholder="Tell us what you think..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox" name="anonymous" />
+              Submit anonymously
+            </label>
+          </div>
+
+          <button type="submit" class="btn">Submit Feedback</button>
+        </form>
+      </section>
+
+      <aside class="sidebar" aria-label="Feedback links">
+        <h2>Other Ways to Help</h2>
+        <ul>
+          <li><a href="contact.html">Contact Support</a></li>
+          <li><a href="faq.html">Browse FAQ</a></li>
+          <li><a href="events.html">Upcoming Events</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 StudentHub. <a href="contact.html">Contact Us</a> | <a href="faq.html">FAQ</a></p>
+  </footer>
+
+</body>
+</html>

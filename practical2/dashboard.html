@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your StudentHub dashboard – view results, attendance, assignments, and upcoming events." />
+  <title>Dashboard | StudentHub</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .stat-card .number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .stat-card p { font-size: 0.9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a href="index.html" class="logo" aria-label="StudentHub Home">🎓 StudentHub</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Dashboard</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content" class="site-main">
+    <h1 class="section-title">Student Dashboard</h1>
+    <p>Welcome back, <strong>Rahul Verma</strong> | Roll No: BCA/2024/021</p>
+
+    <!-- Stats -->
+    <section aria-labelledby="stats-heading" class="mt-2">
+      <h2 id="stats-heading" class="visually-hidden">Quick Statistics</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="number" aria-label="Attendance 87 percent">87%</div>
+          <p>Attendance</p>
+        </div>
+        <div class="stat-card">
+          <div class="number" aria-label="CGPA 8.4">8.4</div>
+          <p>CGPA</p>
+        </div>
+        <div class="stat-card">
+          <div class="number" aria-label="3 pending assignments">3</div>
+          <p>Pending Assignments</p>
+        </div>
+        <div class="stat-card">
+          <div class="number" aria-label="2 upcoming events">2</div>
+          <p>Upcoming Events</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Results -->
+    <section aria-labelledby="results-heading" class="mt-1">
+      <h2 id="results-heading" class="section-title">Recent Results</h2>
+      <table class="data-table" aria-label="Semester results table">
+        <thead>
+          <tr>
+            <th scope="col">Subject</th>
+            <th scope="col">Internal</th>
+            <th scope="col">External</th>
+            <th scope="col">Total</th>
+            <th scope="col">Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Web Technologies</td>
+            <td>38</td><td>68</td><td>76</td>
+            <td><span class="badge badge-success">A+</span></td>
+          </tr>
+          <tr>
+            <td>Database Management</td>
+            <td>35</td><td>62</td><td>72</td>
+            <td><span class="badge badge-success">A</span></td>
+          </tr>
+          <tr>
+            <td>Data Structures</td>
+            <td>30</td><td>55</td><td>62</td>
+            <td><span class="badge badge-warning">B</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Upcoming Assignments -->
+    <section aria-labelledby="assignments-heading" class="mt-2">
+      <h2 id="assignments-heading" class="section-title">Pending Assignments</h2>
+      <ul>
+        <li>Web Technologies – Lab Report 4 | Due: <time datetime="2026-08-20">20 Aug 2026</time></li>
+        <li>DBMS – ER Diagram submission | Due: <time datetime="2026-08-22">22 Aug 2026</time></li>
+        <li>Data Structures – Sorting Algorithms | Due: <time datetime="2026-08-25">25 Aug 2026</time></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 StudentHub. <a href="contact.html">Contact Us</a></p>
+  </footer>
+
+</body>
+</html>

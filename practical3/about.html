@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About StudentHub – mission, vision, team, and values." />
+  <title>About | StudentHub – Practical 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .team-card {
+      background: var(--clr-surface);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .avatar-circle {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--clr-primary);
+      color: #fff;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .timeline { list-style: none; border-left: 3px solid var(--clr-primary); padding-left: 1.5rem; }
+    .timeline li { position: relative; margin-bottom: 1.2rem; }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -1.92rem; top: .35rem;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--clr-accent);
+      border: 2px solid var(--clr-primary);
+    }
+    .timeline time { font-size: .82rem; color: var(--clr-muted); display: block; }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav class="navbar-custom" role="banner" aria-label="Primary navigation">
+      <a href="index.html" class="navbar-brand">🎓 StudentHub</a>
+      <button class="hamburger" id="hamburger-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="main-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">About</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero banner for page -->
+    <div class="hero" style="padding:3rem 1rem;" aria-labelledby="about-hero-heading">
+      <div class="hero-inner">
+        <h1 id="about-hero-heading">About StudentHub</h1>
+        <p>Empowering students with technology, accessibility, and community.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="layout-two-col">
+        <div>
+          <!-- Mission & Vision -->
+          <section aria-labelledby="mission-h">
+            <h2 id="mission-h" class="section-title">Our Mission</h2>
+            <p>StudentHub aims to streamline every aspect of student life through an intuitive, accessible, and responsive web portal — making academic information available anytime, anywhere, on any device.</p>
+          </section>
+
+          <!-- Values Cards (Bootstrap row + CSS Grid fallback) -->
+          <section aria-labelledby="values-h" class="mt-md">
+            <h2 id="values-h" class="section-title">Core Values</h2>
+            <div class="cards-grid">
+              <article class="feature-card"><div class="icon">♿</div><h3>Accessibility</h3><p>WCAG 2.1 AA compliant so every student benefits equally.</p></article>
+              <article class="feature-card"><div class="icon">📱</div><h3>Responsive</h3><p>Mobile-first design that works on phones, tablets, and desktops.</p></article>
+              <article class="feature-card"><div class="icon">🔒</div><h3>Privacy</h3><p>Your data is secure and never shared with third parties.</p></article>
+            </div>
+          </section>
+
+          <!-- Milestone Timeline (CSS + semantic list) -->
+          <section aria-labelledby="history-h" class="mt-md">
+            <h2 id="history-h" class="section-title">Our Journey</h2>
+            <ul class="timeline">
+              <li><time datetime="2022">2022</time><strong>StudentHub v1.0 launched</strong> – Basic course &amp; result portal.</li>
+              <li><time datetime="2023">2023</time><strong>Events module added</strong> – 500+ students signed up in the first week.</li>
+              <li><time datetime="2024">2024</time><strong>Mobile-responsive redesign</strong> – Bootstrap 5 + custom CSS.</li>
+              <li><time datetime="2025">2025</time><strong>Accessibility overhaul</strong> – WCAG 2.1 AA certification.</li>
+              <li><time datetime="2026">2026</time><strong>1,200+ active students</strong> – Multi-campus rollout underway.</li>
+            </ul>
+          </section>
+
+          <!-- Team Section (CSS Grid) -->
+          <section aria-labelledby="team-h" class="mt-md">
+            <h2 id="team-h" class="section-title">Meet the Team</h2>
+            <div class="team-grid">
+              <div class="team-card"><div class="avatar-circle" aria-hidden="true">P</div><h3>Dr. Priya Sharma</h3><p>Project Lead</p></div>
+              <div class="team-card"><div class="avatar-circle" aria-hidden="true">R</div><h3>Rahul Verma</h3><p>Frontend Developer</p></div>
+              <div class="team-card"><div class="avatar-circle" aria-hidden="true">A</div><h3>Aisha Khan</h3><p>UX &amp; Accessibility</p></div>
+              <div class="team-card"><div class="avatar-circle" aria-hidden="true">S</div><h3>Suresh Patel</h3><p>Backend Engineer</p></div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="sidebar" aria-label="Quick links">
+          <h2>Explore More</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col"><h3>🎓 StudentHub</h3><p>Building the future of campus life, one pixel at a time.</p></div>
+      <div class="footer-col"><h3>Navigation</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="events.html">Events</a></li></ul></div>
+      <div class="footer-col"><h3>Account</h3><ul><li><a href="register.html">Register</a></li><li><a href="login.html">Login</a></li></ul></div>
+      <div class="footer-col"><h3>Support</h3><ul><li><a href="contact.html">Contact</a></li><li><a href="feedback.html">Feedback</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 StudentHub.</span><span>Practical 3 – Responsive UI</span></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!exp));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

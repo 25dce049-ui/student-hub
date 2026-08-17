@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student dashboard – results, attendance, and assignments in a responsive layout." />
+  <title>Dashboard | StudentHub – Practical 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Progress bar */
+    .progress-wrap { background: #e2e8f0; border-radius: 999px; height: 10px; overflow: hidden; }
+    .progress-bar-inner {
+      height: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+      transition: width .6s ease;
+    }
+    .subject-row { display: flex; align-items: center; gap: 1rem; margin-bottom: .8rem; }
+    .subject-name { min-width: 180px; font-size: .9rem; }
+    .subject-pct  { min-width: 38px; text-align: right; font-size: .85rem; font-weight: 600; color: var(--clr-primary); }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav class="navbar-custom" role="banner" aria-label="Primary navigation">
+      <a href="index.html" class="navbar-brand">🎓 StudentHub</a>
+      <button class="hamburger" id="hamburger-btn" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="main-nav" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Dashboard</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content" class="container">
+    <h1 class="section-title">My Dashboard</h1>
+    <p>Welcome, <strong>Rahul Verma</strong> &nbsp;|&nbsp; BCA/2024/021</p>
+
+    <!-- ===== CSS GRID: named areas ===== -->
+    <div class="dashboard-layout mt-md">
+
+      <!-- Stats Row -->
+      <section class="dash-stats" aria-labelledby="stats-label">
+        <h2 id="stats-label" class="visually-hidden">Quick stats</h2>
+        <div class="stats-row">
+          <div class="stat-item"><div class="stat-number">87%</div><div class="stat-label">Attendance</div></div>
+          <div class="stat-item"><div class="stat-number">8.4</div><div class="stat-label">CGPA</div></div>
+          <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Pending Tasks</div></div>
+          <div class="stat-item"><div class="stat-number">2</div><div class="stat-label">Upcoming Events</div></div>
+        </div>
+      </section>
+
+      <!-- Results Table -->
+      <section class="dash-table" aria-labelledby="results-label">
+        <h2 id="results-label" class="section-title">Semester Results</h2>
+        <div class="table-responsive">
+          <table class="data-table" aria-label="Semester results">
+            <thead>
+              <tr>
+                <th scope="col">Subject</th>
+                <th scope="col">Internal (40)</th>
+                <th scope="col">External (60)</th>
+                <th scope="col">Total (100)</th>
+                <th scope="col">Grade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Web Technologies</td><td>38</td><td>68</td><td>76</td><td><span class="badge badge-success">A+</span></td></tr>
+              <tr><td>Database Management</td><td>35</td><td>62</td><td>72</td><td><span class="badge badge-success">A</span></td></tr>
+              <tr><td>Data Structures</td><td>30</td><td>55</td><td>62</td><td><span class="badge badge-warning">B</span></td></tr>
+              <tr><td>Operating Systems</td><td>33</td><td>59</td><td>69</td><td><span class="badge badge-success">A</span></td></tr>
+              <tr><td>Mathematics – II</td><td>28</td><td>50</td><td>57</td><td><span class="badge badge-warning">B</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Subject-wise attendance bars (Flexbox) -->
+        <h2 class="section-title mt-md">Subject Attendance</h2>
+        <div aria-label="Subject-wise attendance">
+          <div class="subject-row">
+            <span class="subject-name">Web Technologies</span>
+            <div class="progress-wrap" style="flex:1;" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="92% attendance">
+              <div class="progress-bar-inner" style="width:92%"></div>
+            </div>
+            <span class="subject-pct">92%</span>
+          </div>
+          <div class="subject-row">
+            <span class="subject-name">Database Management</span>
+            <div class="progress-wrap" style="flex:1;" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar-inner" style="width:88%"></div>
+            </div>
+            <span class="subject-pct">88%</span>
+          </div>
+          <div class="subject-row">
+            <span class="subject-name">Data Structures</span>
+            <div class="progress-wrap" style="flex:1;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar-inner" style="width:75%"></div>
+            </div>
+            <span class="subject-pct">75%</span>
+          </div>
+          <div class="subject-row">
+            <span class="subject-name">Operating Systems</span>
+            <div class="progress-wrap" style="flex:1;" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar-inner" style="width:85%"></div>
+            </div>
+            <span class="subject-pct">85%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sidebar -->
+      <aside class="dash-aside sidebar" aria-label="Dashboard quick links">
+        <h2>Quick Actions</h2>
+        <ul>
+          <li><a href="#">Submit Assignment</a></li>
+          <li><a href="#">Download Timetable</a></li>
+          <li><a href="events.html">Register for Event</a></li>
+          <li><a href="#">View Fee Status</a></li>
+          <li><a href="#">Library Resources</a></li>
+          <li><a href="feedback.html">Give Feedback</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col"><h3>🎓 StudentHub</h3><p>Dashboard built with CSS Grid named areas and Bootstrap 5.</p></div>
+      <div class="footer-col"><h3>Navigation</h3><ul><li><a href="index.html">Home</a></li><li><a href="events.html">Events</a></li></ul></div>
+      <div class="footer-col"><h3>Account</h3><ul><li><a href="login.html">Logout</a></li></ul></div>
+      <div class="footer-col"><h3>Support</h3><ul><li><a href="contact.html">Help Desk</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 StudentHub.</span></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('main-nav');
+    btn.addEventListener('click', () => {
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!exp));
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

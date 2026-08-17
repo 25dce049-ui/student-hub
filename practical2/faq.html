@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frequently asked questions about StudentHub." />
+  <title>FAQ | StudentHub</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    details {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 0.8rem;
+    }
+    summary {
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--secondary);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary::after { content: '＋'; font-size: 1.2rem; color: var(--primary); }
+    details[open] summary::after { content: '－'; }
+    details > div {
+      padding: 0 1.2rem 1rem 1.2rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a href="index.html" class="logo" aria-label="StudentHub Home">🎓 StudentHub</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="faq.html" aria-current="page">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">FAQ</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content" class="site-main">
+    <h1 class="section-title">Frequently Asked Questions</h1>
+
+    <div class="content-sidebar">
+      <section aria-labelledby="faq-section">
+        <h2 id="faq-section" class="visually-hidden">FAQ List</h2>
+
+        <!-- Semantic use of details/summary for accessible accordion -->
+        <details>
+          <summary>How do I register on StudentHub?</summary>
+          <div>
+            <p>Click the <strong>Register</strong> link in the navigation. Fill in your personal, contact, and academic details, set a password, and submit the form. Once approved by the admin, you'll receive a confirmation email.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>I forgot my password. What should I do?</summary>
+          <div>
+            <p>Visit the <a href="login.html">Login page</a> and click <em>Forgot your password?</em>. Enter your registered email address, and a password-reset link will be sent to you within 5 minutes.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>When are semester results published?</summary>
+          <div>
+            <p>Results are published on the portal within 30 days after the examination ends. You'll receive an email notification when your results are available on the <a href="dashboard.html">Dashboard</a>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I update my personal information?</summary>
+          <div>
+            <p>Log in and navigate to <a href="profile.html">My Profile</a>. You can update your mobile number and address directly. For changes to your name or date of birth, contact the admin office.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I register for an event?</summary>
+          <div>
+            <p>Go to the <a href="events.html">Events</a> page, find the event you're interested in, and click <em>Register Now</em>. You must be logged in to register. Confirmation is sent to your registered email.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is my personal data secure on this portal?</summary>
+          <div>
+            <p>Yes. StudentHub uses encrypted connections (HTTPS) and stores passwords in hashed form. We do not share your data with third parties. See our Privacy Policy for full details.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Who do I contact for technical issues?</summary>
+          <div>
+            <p>Use the <a href="contact.html">Contact Us</a> form or email <a href="mailto:support@studenthub.edu">support@studenthub.edu</a>. Our team responds within 1 business day.</p>
+          </div>
+        </details>
+
+      </section>
+
+      <aside class="sidebar" aria-label="Help links">
+        <h2>Still Need Help?</h2>
+        <ul>
+          <li><a href="contact.html">Contact Support</a></li>
+          <li><a href="feedback.html">Submit Feedback</a></li>
+          <li><a href="register.html">Create Account</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 StudentHub. <a href="contact.html">Contact Us</a></p>
+  </footer>
+
+</body>
+</html>

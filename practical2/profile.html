@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View and update your StudentHub profile." />
+  <title>Profile | StudentHub</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: var(--light);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+    .avatar {
+      width: 90px;
+      height: 90px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a href="index.html" class="logo" aria-label="StudentHub Home">🎓 StudentHub</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <ul role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html" aria-current="page">Profile</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><span aria-current="page">Profile</span></li>
+    </ol>
+  </nav>
+
+  <main id="main-content" class="site-main">
+
+    <!-- Profile Header -->
+    <div class="profile-header" role="region" aria-label="Student profile overview">
+      <div class="avatar" aria-hidden="true">R</div>
+      <div>
+        <h1>Rahul Verma</h1>
+        <p>Roll No: BCA/2024/021 &nbsp;|&nbsp; BCA – Second Year</p>
+        <p>Email: <a href="mailto:rahul.verma@student.edu">rahul.verma@student.edu</a></p>
+      </div>
+    </div>
+
+    <div class="content-sidebar">
+      <div>
+        <!-- Personal Details -->
+        <section aria-labelledby="personal-heading">
+          <h2 id="personal-heading" class="section-title">Personal Details</h2>
+          <table class="data-table" aria-label="Personal details">
+            <tbody>
+              <tr><th scope="row">Date of Birth</th><td>15 March 2005</td></tr>
+              <tr><th scope="row">Gender</th><td>Male</td></tr>
+              <tr><th scope="row">Mobile</th><td>9876543210</td></tr>
+              <tr><th scope="row">Address</th><td>12, MG Road, Pune – 411001</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Academic Details -->
+        <section aria-labelledby="academic-heading" class="mt-2">
+          <h2 id="academic-heading" class="section-title">Academic Details</h2>
+          <table class="data-table" aria-label="Academic details">
+            <tbody>
+              <tr><th scope="row">Course</th><td>Bachelor of Computer Applications (BCA)</td></tr>
+              <tr><th scope="row">Year</th><td>Second Year (Semester III)</td></tr>
+              <tr><th scope="row">CGPA</th><td>8.4 / 10</td></tr>
+              <tr><th scope="row">Attendance</th><td>87%</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Edit Profile Form -->
+        <section aria-labelledby="edit-heading" class="mt-2">
+          <h2 id="edit-heading" class="section-title">Edit Profile</h2>
+          <form action="#" method="post" aria-label="Edit profile form">
+            <div class="form-group">
+              <label for="profile-mobile">Mobile Number</label>
+              <input type="tel" id="profile-mobile" name="mobile"
+                     value="9876543210" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="profile-address">Address</label>
+              <textarea id="profile-address" name="address" rows="3">12, MG Road, Pune – 411001</textarea>
+            </div>
+            <button type="submit" class="btn">Save Changes</button>
+          </form>
+        </section>
+      </div>
+
+      <aside class="sidebar" aria-label="Profile actions">
+        <h2>Account</h2>
+        <ul>
+          <li><a href="#">Change Password</a></li>
+          <li><a href="#">Upload Photo</a></li>
+          <li><a href="dashboard.html">Back to Dashboard</a></li>
+          <li><a href="feedback.html">Give Feedback</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 StudentHub. <a href="contact.html">Contact Us</a></p>
+  </footer>
+
+</body>
+</html>
