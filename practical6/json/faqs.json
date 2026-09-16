@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "question": "How do I register on StudentHub?",
+    "answer": "Click the Register link in the navigation bar. Fill in your personal, contact, and academic details, set a strong password, and submit the form. Once approved by the admin, you will receive a confirmation email with login instructions.",
+    "category": "Account",
+    "helpful": 124,
+    "tags": ["registration", "account", "getting started"]
+  },
+  {
+    "id": 2,
+    "question": "I forgot my password. What should I do?",
+    "answer": "Visit the Login page and click 'Forgot your password?'. Enter your registered email address and a password-reset link will be sent within 5 minutes. Check your spam folder if you don't see it.",
+    "category": "Account",
+    "helpful": 98,
+    "tags": ["password", "reset", "login"]
+  },
+  {
+    "id": 3,
+    "question": "When are semester results published?",
+    "answer": "Results are published on the portal within 30 days after the examination ends. You will receive an email notification when your results are available on the Dashboard.",
+    "category": "Academics",
+    "helpful": 210,
+    "tags": ["results", "semester", "marks"]
+  },
+  {
+    "id": 4,
+    "question": "How do I update my personal information?",
+    "answer": "Log in and navigate to My Profile. You can update your mobile number and address directly from the Edit Profile section. For changes to your name or date of birth, contact the admin office with valid ID proof.",
+    "category": "Account",
+    "helpful": 76,
+    "tags": ["profile", "update", "personal info"]
+  },
+  {
+    "id": 5,
+    "question": "How do I register for an event?",
+    "answer": "Go to the Events page, find the event you are interested in, and click Register Now. You must be logged in to register. A confirmation email is sent to your registered email address upon successful registration.",
+    "category": "Events",
+    "helpful": 155,
+    "tags": ["events", "registration", "hackathon"]
+  },
+  {
+    "id": 6,
+    "question": "Is my personal data secure on this portal?",
+    "answer": "Yes. StudentHub uses HTTPS encrypted connections and stores passwords in bcrypt-hashed form. We do not share your data with third parties. Please review our Privacy Policy for complete details.",
+    "category": "Privacy",
+    "helpful": 89,
+    "tags": ["security", "privacy", "data protection"]
+  },
+  {
+    "id": 7,
+    "question": "How is my CGPA calculated?",
+    "answer": "CGPA is the cumulative average of all grade points earned across all completed semesters. Each subject's grade point is multiplied by its credit hours, summed up, and divided by total credit hours. Refer to the Academic Regulations document for the complete grading scale.",
+    "category": "Academics",
+    "helpful": 187,
+    "tags": ["CGPA", "grades", "marks", "calculation"]
+  },
+  {
+    "id": 8,
+    "question": "What is the minimum attendance requirement?",
+    "answer": "The minimum required attendance is 75% per subject per semester. Students below 75% in any subject will not be permitted to appear in the end-semester examination for that subject. Medical leave requires a doctor's certificate submitted within 3 days.",
+    "category": "Academics",
+    "helpful": 234,
+    "tags": ["attendance", "rules", "examination"]
+  },
+  {
+    "id": 9,
+    "question": "How do I download my hall ticket?",
+    "answer": "Hall tickets are available for download from the Dashboard under the Examinations section, 10 days before the examination schedule. Log in, go to Dashboard → Examinations → Download Hall Ticket.",
+    "category": "Examinations",
+    "helpful": 143,
+    "tags": ["hall ticket", "examination", "download"]
+  },
+  {
+    "id": 10,
+    "question": "Can I change my course after admission?",
+    "answer": "Course changes are permitted only within the first 30 days of the academic year, subject to seat availability in the desired course and approval from the Head of Department. Submit the Course Change Request form at the admin office.",
+    "category": "Admissions",
+    "helpful": 62,
+    "tags": ["course change", "admission", "transfer"]
+  },
+  {
+    "id": 11,
+    "question": "How do I pay college fees online?",
+    "answer": "Log in to StudentHub, go to Dashboard → Fee Payment. Select the fee type (tuition, exam, library, etc.), choose your payment method (UPI, net banking, or debit/credit card), and complete the transaction. Download the receipt from the portal.",
+    "category": "Finance",
+    "helpful": 198,
+    "tags": ["fees", "payment", "online", "receipt"]
+  },
+  {
+    "id": 12,
+    "question": "How do I apply for a scholarship?",
+    "answer": "Scholarship applications open in June each year. Visit Dashboard → Scholarships to see available schemes. Upload required documents (income certificate, previous marksheet, caste certificate if applicable) and submit before the deadline.",
+    "category": "Finance",
+    "helpful": 171,
+    "tags": ["scholarship", "financial aid", "application"]
+  },
+  {
+    "id": 13,
+    "question": "Where can I find the academic calendar?",
+    "answer": "The academic calendar is available under Dashboard → Downloads → Academic Calendar. It includes exam dates, holiday lists, event schedules, and assignment submission deadlines for the current academic year.",
+    "category": "Academics",
+    "helpful": 116,
+    "tags": ["calendar", "schedule", "dates", "holidays"]
+  },
+  {
+    "id": 14,
+    "question": "How do I get my bonafide certificate?",
+    "answer": "Submit a Bonafide Certificate Request through Dashboard → Certificates → Bonafide. The certificate is processed within 3 working days. You can download it from the portal or collect a physical copy from the admin office.",
+    "category": "Certificates",
+    "helpful": 88,
+    "tags": ["bonafide", "certificate", "document"]
+  },
+  {
+    "id": 15,
+    "question": "How do I submit an assignment online?",
+    "answer": "Go to Dashboard → Assignments, find the assignment listed under your course, click Upload Submission, attach your file (PDF/DOCX, max 10MB), add any notes, and click Submit. A submission confirmation email is sent immediately.",
+    "category": "Academics",
+    "helpful": 205,
+    "tags": ["assignment", "submission", "upload"]
+  },
+  {
+    "id": 16,
+    "question": "Who do I contact for technical issues with the portal?",
+    "answer": "Use the Contact Us form or email support@studenthub.edu. For urgent issues call the helpdesk at 020-1234-5678 (Mon–Fri 9 AM–5 PM). Our team responds within 1 working day.",
+    "category": "Support",
+    "helpful": 77,
+    "tags": ["technical support", "help", "contact"]
+  },
+  {
+    "id": 17,
+    "question": "How do I access library resources online?",
+    "answer": "Log in to StudentHub and go to Dashboard → Library. Use your student credentials to access e-books, research papers via JSTOR and IEEE Xplore, and digital study materials. Physical book reservations can also be made online.",
+    "category": "Library",
+    "helpful": 94,
+    "tags": ["library", "e-books", "research", "resources"]
+  },
+  {
+    "id": 18,
+    "question": "How do I apply for a leave of absence?",
+    "answer": "Submit a Leave Application through Dashboard → Leave Management. Select the type of leave (medical, personal, academic), enter the dates, upload supporting documents if required, and submit for your faculty advisor's approval.",
+    "category": "Academics",
+    "helpful": 132,
+    "tags": ["leave", "absence", "application"]
+  }
+]

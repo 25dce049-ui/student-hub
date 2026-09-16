@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Practical 6 – Fetch API JSON rendering with search, filter, sort, and pagination for StudentHub." />
+  <title>Practical 6 – Fetch API &amp; JSON Rendering | StudentHub</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Skip to content -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ================================================
+       NAVBAR
+       ================================================ -->
+  <header>
+    <div class="navbar" role="banner">
+      <a href="../practical2/index.html" class="logo" aria-label="StudentHub Home">
+        🎓 StudentHub
+      </a>
+      <div class="navbar-right">
+        <span class="cache-hint" aria-live="polite">JSON cached in localStorage</span>
+        <button id="clear-cache-btn" aria-label="Clear localStorage JSON cache">
+          🗑 Clear Cache
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================
+       MAIN
+       ================================================ -->
+  <main id="main-content" class="container">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Practical 6 – Fetch API &amp; JSON Data Rendering</h1>
+      <p>
+        External JSON fetched via <strong>Fetch API</strong> · Search · Filter · Sort ·
+        Pagination · localStorage Cache (Advanced) · Dependent Dropdowns (Intermediate)
+      </p>
+    </div>
+
+    <!-- ================================================
+         TABS
+         ================================================ -->
+    <div class="tabs-bar" role="tablist" aria-label="Data sections">
+      <button class="tab-btn active"
+              role="tab"
+              id="tab-events"
+              data-tab="panel-events"
+              aria-selected="true"
+              aria-controls="panel-events">
+        📅 Events
+      </button>
+      <button class="tab-btn"
+              role="tab"
+              id="tab-students"
+              data-tab="panel-students"
+              aria-selected="false"
+              aria-controls="panel-students">
+        🎓 Students
+      </button>
+      <button class="tab-btn"
+              role="tab"
+              id="tab-faqs"
+              data-tab="panel-faqs"
+              aria-selected="false"
+              aria-controls="panel-faqs">
+        ❓ FAQs
+      </button>
+    </div>
+
+    <!-- ================================================
+         TAB 1: EVENTS
+         ================================================ -->
+    <section id="panel-events"
+             class="tab-panel active"
+             role="tabpanel"
+             aria-labelledby="tab-events">
+
+      <!-- Stats Strip -->
+      <div id="events-stats" class="stats-strip" aria-label="Events statistics"></div>
+
+      <!-- Controls -->
+      <div class="controls-bar" role="search" aria-label="Events filters">
+
+        <!-- Search -->
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input type="search"
+                 id="ev-search"
+                 placeholder="Search events, venue, tags…"
+                 aria-label="Search events"
+                 autocomplete="off" />
+        </div>
+
+        <!-- Category filter -->
+        <select id="ev-filter-category"
+                class="filter-select"
+                aria-label="Filter by category">
+          <option value="all">All Categories</option>
+        </select>
+
+        <!-- Status filter -->
+        <select id="ev-filter-status"
+                class="filter-select"
+                aria-label="Filter by status">
+          <option value="all">All Statuses</option>
+        </select>
+
+        <!-- Fee filter -->
+        <select id="ev-filter-fee"
+                class="filter-select"
+                aria-label="Filter by fee">
+          <option value="all">Free &amp; Paid</option>
+          <option value="free">Free Only</option>
+          <option value="paid">Paid Only</option>
+        </select>
+
+        <!-- Sort field -->
+        <select id="ev-sort"
+                class="filter-select"
+                aria-label="Sort events by">
+          <option value="date">Sort: Date</option>
+          <option value="title">Sort: Title</option>
+          <option value="seats">Sort: Seats</option>
+          <option value="fee">Sort: Fee</option>
+        </select>
+
+        <!-- Sort direction -->
+        <select id="ev-sort-dir"
+                class="filter-select"
+                aria-label="Sort direction">
+          <option value="asc">↑ Ascending</option>
+          <option value="desc">↓ Descending</option>
+        </select>
+
+      </div><!-- /controls-bar -->
+
+      <!-- Results count -->
+      <p id="events-info" class="results-info" aria-live="polite"></p>
+
+      <!-- Cards grid -->
+      <div id="events-grid"
+           class="cards-grid"
+           aria-label="Events list"
+           aria-live="polite"
+           aria-relevant="additions removals"></div>
+
+      <!-- Pagination -->
+      <div id="events-pagination"></div>
+
+    </section><!-- /panel-events -->
+
+    <!-- ================================================
+         TAB 2: STUDENTS
+         ================================================ -->
+    <section id="panel-students"
+             class="tab-panel"
+             role="tabpanel"
+             aria-labelledby="tab-students">
+
+      <!-- Stats Strip -->
+      <div id="students-stats" class="stats-strip" aria-label="Students statistics"></div>
+
+      <!-- Controls -->
+      <div class="controls-bar" role="search" aria-label="Students filters">
+
+        <!-- Search -->
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input type="search"
+                 id="st-search"
+                 placeholder="Search name, roll no, email, city…"
+                 aria-label="Search students"
+                 autocomplete="off" />
+        </div>
+
+        <!-- Course filter -->
+        <select id="st-filter-course"
+                class="filter-select"
+                aria-label="Filter by course">
+          <option value="all">All Courses</option>
+        </select>
+
+        <!-- Year filter -->
+        <select id="st-filter-year"
+                class="filter-select"
+                aria-label="Filter by year">
+          <option value="all">All Years</option>
+        </select>
+
+        <!-- Status filter -->
+        <select id="st-filter-status"
+                class="filter-select"
+                aria-label="Filter by status">
+          <option value="all">All Statuses</option>
+        </select>
+
+        <!-- State filter (Intermediate: dependent dropdown) -->
+        <select id="st-filter-state"
+                class="filter-select"
+                aria-label="Filter by state"
+                aria-describedby="dep-hint">
+          <option value="all">All States</option>
+        </select>
+
+        <!-- City filter — depends on state selection -->
+        <select id="st-filter-city"
+                class="filter-select"
+                aria-label="Filter by city (depends on state)">
+          <option value="all">All Cities</option>
+        </select>
+        <span id="dep-hint" class="visually-hidden">
+          City options update based on selected state.
+        </span>
+
+        <!-- CGPA range -->
+        <div class="range-wrap" role="group" aria-label="CGPA range filter">
+          <span class="range-label">CGPA:</span>
+          <input type="number" id="st-cgpa-min" class="range-input"
+                 min="0" max="10" step="0.1"
+                 placeholder="Min"
+                 aria-label="Minimum CGPA" />
+          <span class="range-label">–</span>
+          <input type="number" id="st-cgpa-max" class="range-input"
+                 min="0" max="10" step="0.1"
+                 placeholder="Max"
+                 aria-label="Maximum CGPA" />
+        </div>
+
+        <!-- Sort -->
+        <select id="st-sort"
+                class="filter-select"
+                aria-label="Sort students by">
+          <option value="name">Sort: Name</option>
+          <option value="cgpa">Sort: CGPA</option>
+          <option value="attendance">Sort: Attendance</option>
+          <option value="course">Sort: Course</option>
+        </select>
+
+        <select id="st-sort-dir"
+                class="filter-select"
+                aria-label="Sort direction">
+          <option value="asc">↑ Ascending</option>
+          <option value="desc">↓ Descending</option>
+        </select>
+
+      </div><!-- /controls-bar -->
+
+      <!-- Results count -->
+      <p id="students-info" class="results-info" aria-live="polite"></p>
+
+      <!-- Cards grid -->
+      <div id="students-grid"
+           class="cards-grid"
+           aria-label="Students list"
+           aria-live="polite"
+           aria-relevant="additions removals"></div>
+
+      <!-- Pagination -->
+      <div id="students-pagination"></div>
+
+    </section><!-- /panel-students -->
+
+    <!-- ================================================
+         TAB 3: FAQs
+         ================================================ -->
+    <section id="panel-faqs"
+             class="tab-panel"
+             role="tabpanel"
+             aria-labelledby="tab-faqs">
+
+      <!-- Stats Strip -->
+      <div id="faqs-stats" class="stats-strip" aria-label="FAQ statistics"></div>
+
+      <!-- Controls -->
+      <div class="controls-bar" role="search" aria-label="FAQ filters">
+
+        <!-- Search -->
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input type="search"
+                 id="fq-search"
+                 placeholder="Search questions, answers, tags…"
+                 aria-label="Search FAQs"
+                 autocomplete="off" />
+        </div>
+
+        <!-- Category -->
+        <select id="fq-filter-category"
+                class="filter-select"
+                aria-label="Filter by FAQ category">
+          <option value="all">All Categories</option>
+        </select>
+
+        <!-- Sort -->
+        <select id="fq-sort"
+                class="filter-select"
+                aria-label="Sort FAQs by">
+          <option value="id">Sort: Default</option>
+          <option value="helpful">Sort: Most Helpful</option>
+          <option value="question">Sort: Question A–Z</option>
+          <option value="category">Sort: Category</option>
+        </select>
+
+        <select id="fq-sort-dir"
+                class="filter-select"
+                aria-label="Sort direction">
+          <option value="asc">↑ Ascending</option>
+          <option value="desc">↓ Descending</option>
+        </select>
+
+      </div><!-- /controls-bar -->
+
+      <!-- Results count -->
+      <p id="faqs-info" class="results-info" aria-live="polite"></p>
+
+      <!-- FAQ accordion list -->
+      <div id="faqs-list"
+           aria-label="FAQ list"
+           aria-live="polite"
+           aria-relevant="additions removals"></div>
+
+      <!-- Pagination -->
+      <div id="faqs-pagination"></div>
+
+    </section><!-- /panel-faqs -->
+
+  </main><!-- /container -->
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <p>
+      &copy; 2026 StudentHub – Practical 6: Fetch API &amp; JSON Rendering &nbsp;|&nbsp;
+      <a href="../practical2/index.html">Home</a> &nbsp;|&nbsp;
+      <a href="../practical5/index.html">← Practical 5</a>
+    </p>
+    <p style="margin-top:.4rem; font-size:.78rem;">
+      Data loaded via <code>Fetch API</code> · Cached in
+      <code>localStorage</code> · Modules: api.js · util.js · search.js · render.js · app.js
+    </p>
+  </footer>
+
+  <!-- ================================================
+       VISUALLY HIDDEN UTILITY (used by JS aria helpers)
+       ================================================ -->
+  <style>
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; padding: 0;
+      margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;
+    }
+    /* Range input inside controls bar */
+    .range-input {
+      width: 70px; padding: .52rem .6rem;
+      border: 1.5px solid var(--border); border-radius: var(--radius);
+      font-size: .88rem; font-family: var(--font);
+      color: var(--dark); background: #fafafa;
+    }
+    .range-input:focus { outline: none; border-color: var(--primary); }
+  </style>
+
+  <!--
+    ES Module entry point.
+    All imports are relative so no bundler is needed —
+    works directly in any modern browser (Chrome, Firefox, Edge, Safari).
+  -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
