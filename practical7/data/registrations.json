@@ -1,0 +1,57 @@
+[
+    {
+        "submitted_at": "2026-09-29 20:32:41",
+        "full_name": "Aisha Khan",
+        "email": "aisha.khan@example.com",
+        "phone": "9876543210",
+        "course": "BCA",
+        "year": "2",
+        "message": "Looking forward to the coding club activities.",
+        "ip_address": "::1",
+        "id": 1
+    },
+    {
+        "submitted_at": "2026-09-29 20:32:41",
+        "full_name": "Rohit Sharma",
+        "email": "rohit.sharma@example.com",
+        "phone": "9812345678",
+        "course": "BCS",
+        "year": "3",
+        "message": "Please add me to the newsletter.",
+        "ip_address": "::1",
+        "id": 2
+    },
+    {
+        "submitted_at": "2026-09-29 20:32:41",
+        "full_name": "Priya Menon",
+        "email": "priya.menon@example.com",
+        "phone": "9900112233",
+        "course": "MCA",
+        "year": "1",
+        "message": "Interested in the internship cell.",
+        "ip_address": "::1",
+        "id": 3
+    },
+    {
+        "submitted_at": "2026-09-29 20:32:41",
+        "full_name": "Daniel Fernandes",
+        "email": "daniel.f@example.com",
+        "phone": "9700334455",
+        "course": "BBA",
+        "year": "4",
+        "message": "Requesting information about hostel facilities.",
+        "ip_address": "::1",
+        "id": 4
+    },
+    {
+        "submitted_at": "2026-09-29 20:32:41",
+        "full_name": "Sneha Iyer",
+        "email": "sneha.iyer@example.com",
+        "phone": "9655443322",
+        "course": "BCom",
+        "year": "2",
+        "message": "How can I join the photography society?",
+        "ip_address": "::1",
+        "id": 5
+    }
+]

@@ -1,0 +1,6 @@
+id,submitted_at,full_name,email,phone,course,year,message,ip_address
+1,"2026-09-29 20:32:41","Aisha Khan",aisha.khan@example.com,9876543210,BCA,2,"Looking forward to the coding club activities.",::1
+2,"2026-09-29 20:32:41","Rohit Sharma",rohit.sharma@example.com,9812345678,BCS,3,"Please add me to the newsletter.",::1
+3,"2026-09-29 20:32:41","Priya Menon",priya.menon@example.com,9900112233,MCA,1,"Interested in the internship cell.",::1
+4,"2026-09-29 20:32:41","Daniel Fernandes",daniel.f@example.com,9700334455,BBA,4,"Requesting information about hostel facilities.",::1
+5,"2026-09-29 20:32:41","Sneha Iyer",sneha.iyer@example.com,9655443322,BCom,2,"How can I join the photography society?",::1
