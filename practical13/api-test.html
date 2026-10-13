@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API Tester – Practical 13</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .method-badge { display:inline-block;padding:.2rem .55rem;border-radius:4px;font-size:.78rem;font-weight:700;font-family:monospace; }
+    .get    { background:#dcfce7;color:#166534; }
+    .post   { background:#dbeafe;color:#1e40af; }
+    .put    { background:#fef3c7;color:#92400e; }
+    .delete { background:#fee2e2;color:#991b1b; }
+    .endpoint-card { border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.25rem;margin-bottom:1rem; }
+    .endpoint-card h3 { font-size:.95rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.6rem; }
+    .endpoint-card p  { font-size:.85rem;color:var(--muted);margin-bottom:.75rem; }
+    .run-grid { display:grid;grid-template-columns:1fr auto;gap:.5rem;align-items:end; }
+    .run-grid input, .run-grid textarea { padding:.5rem .75rem;border:1.5px solid var(--border);border-radius:var(--radius);font-size:.88rem;font-family:monospace;background:#fff;width:100%; }
+    .run-grid textarea { min-height:80px;resize:vertical; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo">⚡ API CRUD <span>Practical 13</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">📋 Students</a></li>
+      <li><a href="api-test.html" class="active">🧪 API Tester</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-header">
+    <div>
+      <h1>🧪 API Endpoint Tester</h1>
+      <p>Test all JSON API endpoints directly in the browser. Responses appear below each request.</p>
+    </div>
+  </div>
+
+  <!-- GET all -->
+  <div class="endpoint-card card">
+    <h3><span class="method-badge get">GET</span> List Students</h3>
+    <p>Fetch all students. Supports <code>?search=</code>, <code>?course=</code>, <code>?status=</code>, <code>?page=</code></p>
+    <div class="run-grid">
+      <input type="text" id="getUrl" value="api/students.php?limit=5" placeholder="URL">
+      <button class="btn btn-success btn-sm" onclick="runGet()">▶ Run</button>
+    </div>
+    <pre id="getRes" class="response-box" style="margin-top:.75rem">Response will appear here…</pre>
+  </div>
+
+  <!-- GET single -->
+  <div class="endpoint-card card">
+    <h3><span class="method-badge get">GET</span> Get Single Student</h3>
+    <p>Fetch one student by ID.</p>
+    <div class="run-grid">
+      <input type="text" id="getSingleUrl" value="api/students.php?id=1">
+      <button class="btn btn-success btn-sm" onclick="runGetSingle()">▶ Run</button>
+    </div>
+    <pre id="getSingleRes" class="response-box" style="margin-top:.75rem">Response will appear here…</pre>
+  </div>
+
+  <!-- POST create -->
+  <div class="endpoint-card card">
+    <h3><span class="method-badge post">POST</span> Create Student</h3>
+    <p>Send JSON body to create a new student.</p>
+    <textarea id="postBody">{
+  "name": "Test Student",
+  "email": "test@example.com",
+  "phone": "9999999999",
+  "course": "Computer Science",
+  "status": "active"
+}</textarea>
+    <div style="text-align:right;margin-top:.5rem">
+      <button class="btn btn-primary btn-sm" onclick="runPost()">▶ Run POST</button>
+    </div>
+    <pre id="postRes" class="response-box" style="margin-top:.75rem">Response will appear here…</pre>
+  </div>
+
+  <!-- PUT update -->
+  <div class="endpoint-card card">
+    <h3><span class="method-badge put">PUT</span> Update Student</h3>
+    <p>Update an existing student (change ID in URL).</p>
+    <input type="text" id="putUrl" value="api/students.php?id=1" style="margin-bottom:.5rem;padding:.5rem .75rem;border:1.5px solid var(--border);border-radius:var(--radius);font-family:monospace;font-size:.88rem;width:100%">
+    <textarea id="putBody">{
+  "name": "Updated Name",
+  "email": "updated@example.com",
+  "phone": "9111111111",
+  "course": "Electronics",
+  "status": "inactive"
+}</textarea>
+    <div style="text-align:right;margin-top:.5rem">
+      <button class="btn btn-warning btn-sm" onclick="runPut()">▶ Run PUT</button>
+    </div>
+    <pre id="putRes" class="response-box" style="margin-top:.75rem">Response will appear here…</pre>
+  </div>
+
+  <!-- DELETE -->
+  <div class="endpoint-card card">
+    <h3><span class="method-badge delete">DELETE</span> Delete Student</h3>
+    <p>Permanently delete a student by ID.</p>
+    <div class="run-grid">
+      <input type="text" id="delUrl" value="api/students.php?id=20">
+      <button class="btn btn-danger btn-sm" onclick="runDelete()">▶ Run DELETE</button>
+    </div>
+    <pre id="delRes" class="response-box" style="margin-top:.75rem">Response will appear here…</pre>
+  </div>
+
+</main>
+
+<footer class="site-footer">Practical 13 – API Tester &nbsp;|&nbsp; PHP JSON API & AJAX/Fetch CRUD</footer>
+
+<script>
+async function callApi(url, options, resId) {
+  const el = document.getElementById(resId);
+  el.textContent = '⏳ Sending request…';
+  try {
+    const r = await fetch(url, options);
+    const json = await r.json();
+    el.textContent = JSON.stringify(json, null, 2);
+    el.style.color = json.success ? '#86efac' : '#fca5a5';
+  } catch(e) {
+    el.textContent = '❌ Error: ' + e.message;
+    el.style.color = '#fca5a5';
+  }
+}
+
+function runGet()       { callApi(document.getElementById('getUrl').value, {}, 'getRes'); }
+function runGetSingle() { callApi(document.getElementById('getSingleUrl').value, {}, 'getSingleRes'); }
+function runPost() {
+  callApi('api/students.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: document.getElementById('postBody').value
+  }, 'postRes');
+}
+function runPut() {
+  callApi(document.getElementById('putUrl').value, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: document.getElementById('putBody').value
+  }, 'putRes');
+}
+function runDelete() {
+  callApi(document.getElementById('delUrl').value, { method: 'DELETE' }, 'delRes');
+}
+</script>
+</body>
+</html>
